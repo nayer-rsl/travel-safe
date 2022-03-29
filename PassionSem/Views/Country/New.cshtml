@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PassionSem.Models.LanguageDto>
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Country</h2>
+
+<form action="/Country/Create" method="POST">
+    <div>
+        <label>Name:</label> <input type="text" name="CountryName" />
+    </div>
+    <div>
+        <label>Continent:</label> <input type="text" name="CountryContinent" />
+    </div>
+    <div>
+        <label>Language:</label>
+        <select name="LanguageID">
+            @foreach (var language in Model)
+            {
+                <option value="@language.LanguageID">@language.LanguageName</option>
+
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Add Country" />
+
+    </div>
+</form>
+<style>
+    .title {
+        padding: 10px;
+    }
+
+    form {
+        width: 500px;
+    }
+
+    label {
+        width: 170px;
+    }
+
+    label, input {
+        margin-top: 13px;
+    }
+</style>

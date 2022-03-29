@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Create Document</h2>
+<form action="/Document/Create" method="POST">
+    <div>
+        <label>Name:</label> <input type="text" name="DocumentName" />
+    </div>
+    
+    <div>
+        <input type="submit" value="Create Document" />
+
+    </div>
+</form>
+<style>
+    .title {
+        padding: 10px;
+    }
+
+    form {
+        width: 500px;
+    }
+
+    label {
+        width: 170px;
+    }
+
+    label, input {
+        margin-top: 13px;
+    }
+</style>

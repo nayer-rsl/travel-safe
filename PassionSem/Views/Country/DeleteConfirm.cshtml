@@ -1,0 +1,16 @@
+﻿@model PassionSem.Models.CountryDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>DeleteConfirm</h2>
+
+<h2>Are you sure you want to delete this country?</h2>
+<a href="/Country/List">Cancel</a>
+<h2>@Model.CountryName</h2>
+<div>Continent: @Model.CountryContinent</div>
+<div>language: @Model.LanguageName</div>
+<form action="/Country/Delete/@Model.CountryID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+
+</form>

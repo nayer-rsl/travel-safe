@@ -1,0 +1,41 @@
+﻿@model PassionSem.Models.LanguageDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h2>Update Language</h2>
+<form action="/Language/Update/@Model.LanguageID" method="POST">
+    <div style="display:none;">
+        @* Pass through the Language ID *@
+        <input type="text" name="LanguageID" value="@Model.LanguageID" />
+    </div>
+    <div>
+        <label>Name:</label> <input type="text" name="LanguageName" value="@Model.LanguageName" />
+    </div>
+ 
+    <div>
+        <input type="submit" value="Update Language" />
+
+    </div>
+</form>
+<style>
+    .title {
+        padding: 10px;
+    }
+
+    form {
+        width: 500px;
+    }
+
+    label {
+        width: 170px;
+    }
+
+    label, input {
+        margin-top: 13px;
+    }
+
+</style>

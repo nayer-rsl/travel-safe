@@ -1,0 +1,40 @@
+﻿@model PassionSem.Models.DocumentDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<h2>Update Keeper</h2>
+<form action="/Document/Update/@Model.DocumentID" method="POST">
+    <div style="display:none;">
+        @* Pass through the Keeper ID *@
+        <input type="text" name="DocumentID" value="@Model.DocumentID" />
+    </div>
+    <div>
+        <label>Name:</label> <input type="text" name="DocumentName" value="@Model.DocumentName" />
+    </div>
+   
+
+    <div>
+        <input type="submit" value="Update Document" />
+
+    </div>
+</form>
+<style>
+    .title {
+        padding: 10px;
+    }
+
+    form {
+        width: 500px;
+    }
+
+    label {
+        width: 170px;
+    }
+
+    label, input {
+        margin-top: 13px;
+    }
+</style>

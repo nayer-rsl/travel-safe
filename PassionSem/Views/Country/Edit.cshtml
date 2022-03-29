@@ -1,0 +1,58 @@
+﻿@model PassionSem.Models.ViewModels.UpdateCountry
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+<h2>Update Country</h2>
+<form action="/Country/Update/@Model.SelectedCountry.CountryID" method="POST">
+    <div style="display:none;">
+        @* Pass through the country ID *@
+        <input type="text" name="CountryID" value="@Model.SelectedCountry.CountryID" />
+    </div>
+    <div>
+        <label >Name:</label> <input  type="text" name="CountryName" value="@Model.SelectedCountry.CountryName" />
+    </div>
+    <div>
+        <label>Continent:</label> <input  type="text" name="CountryContinent" value="@Model.SelectedCountry.CountryContinent" />
+    </div>
+    <div>
+        <label >Language ID:</label>
+
+        <select name="LanguageID">
+            @foreach (var language in Model.LanguageOptions)
+            {
+                string selected = "";
+                if (language.LanguageID == Model.SelectedCountry.LanguageID)
+                {
+                    selected = "selected";
+                }
+                <option value="@language.LanguageID" @selected>@language.LanguageName</option>
+
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Update Country" />
+
+    </div>
+</form>
+
+<style>
+    .title {
+        padding: 10px;
+    }
+
+    form {
+        width: 500px;
+    }
+
+    label {
+        width: 170px;
+    }
+    label, input {
+        margin-top: 13px;
+    }
+</style>

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<PassionSem.Models.LanguageDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+
+<a href="/Language/New">New Language</a>
+@foreach (var language in Model)
+{
+    <h2><a href="/Language/Details/@language.LanguageID">@language.LanguageName </a></h2>
+
+}

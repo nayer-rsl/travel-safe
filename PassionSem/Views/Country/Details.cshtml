@@ -1,0 +1,56 @@
+﻿@model PassionSem.Models.ViewModels.DetailsCountry
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<a href="/Country/List">Go back to list</a>
+<br />
+<a href="/Country/Edit/@Model.SelectedCountry.CountryID">Update</a>
+<br />
+<a style="color:#ab2020;" href="/Country/DeleteConfirm/@Model.SelectedCountry.CountryID">Delete</a>
+<h2>@Model.SelectedCountry.CountryName</h2>
+<div>Continent: @Model.SelectedCountry.CountryContinent</div>
+<div>Language: @Model.SelectedCountry.LanguageName</div>
+
+<div>
+    <h2>Documents necessary for @Model.SelectedCountry.CountryName:</h2>
+    @foreach (var document in Model.NecessaryDocuments)
+    {
+
+<h3><a href="/Document/Details/@document.DocumentID">@document.DocumentName</a> <a style="color:#ab2020;" href="/Country/Unassociate/@Model.SelectedCountry.CountryID?DocumentID=@document.DocumentID">[x]</a></h3>
+    }
+
+    <div>
+        <h4>Add a new Document necessary for @Model.SelectedCountry.CountryName</h4>
+        <form method="POST" action="/Country/Associate/@Model.SelectedCountry.CountryID">
+            <select name="DocumentID">
+                   @foreach (var document in Model.AvailableDocuments)
+        {
+            <option value="@document.DocumentID">@document.DocumentName</option>
+        }
+
+            </select>
+            <input type="submit" value="Associate Document" />
+        </form>
+    </div>
+</div>
+<style>
+    .title {
+        padding: 10px;
+    }
+
+    form {
+        width: 500px;
+    }
+
+    label {
+        width: 170px;
+    }
+
+    label, input {
+        margin-top: 13px;
+    }
+</style>

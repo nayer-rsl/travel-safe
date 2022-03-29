@@ -1,0 +1,12 @@
+﻿@model IEnumerable<PassionSem.Models.DocumentDto>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a href="/Document/New">New Document</a>
+@foreach (var document in Model)
+{
+    <h2><a href="/Document/Details/@document.DocumentID">@document.DocumentName</a></h2>
+}

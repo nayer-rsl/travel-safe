@@ -1,0 +1,14 @@
+﻿@model PassionSem.Models.DocumentDto
+
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>DeleteConfirm</h2>
+
+<h2>Are you sure you want to delete this Document?</h2>
+<a href="/Document/List">Cancel</a>
+<h3>Name: @Model.DocumentName </h3>
+<form action="/Document/Delete/@Model.DocumentID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>

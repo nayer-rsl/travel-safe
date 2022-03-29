@@ -1,0 +1,43 @@
+﻿@model PassionSem.Models.ViewModels.DetailsLanguage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<a href="/Language/List">Go back to list</a>
+<br />
+<a href="/Language/Edit/@Model.SelectedLanguage.LanguageID">Update</a>
+<br />
+<a style="color:#ab2020;" href="/Language/DeleteConfirm/@Model.SelectedLanguage.LanguageID">Delete</a>
+<h2>@Model.SelectedLanguage.LanguageName</h2>
+
+
+<div style="margin-top:100px;">
+    <h3>Countries speaking this Language: </h3>
+    @foreach (var country in Model.SpokenCountries)
+    {
+<h2><a href="/Country/Details/@country.CountryID">@country.CountryName,</a></h2>
+
+    }
+</div>
+<style>
+    .title {
+        padding: 10px;
+    }
+
+    form {
+        width: 500px;
+    }
+
+    label {
+        width: 170px;
+    }
+
+    label, input {
+        margin-top: 13px;
+    }
+
+
+</style>

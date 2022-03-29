@@ -1,0 +1,43 @@
+﻿@model PassionSem.Models.ViewModels.DetailsDocument
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+<a href="/Document/List">Go back to list</a>
+<br />
+<a href="/Document/Edit/@Model.SelectedDocument.DocumentID">Update</a>
+<br />
+<a style="color:#ab2020;" href="/Document/DeleteConfirm/@Model.SelectedDocument.DocumentID">Delete</a>
+<h2>@Model.SelectedDocument.DocumentName</h2>
+
+
+
+<div>
+    <h3>Necessary for:</h3>
+    @foreach (var country in Model.NeedCountries)
+    {
+<h2><a href="/Country/Details/@country.CountryID">@country.CountryName,</a></h2>
+
+    }
+</div>
+<style>
+    .title {
+        padding: 10px;
+    }
+
+    form {
+        width: 500px;
+    }
+
+    label {
+        width: 170px;
+    }
+
+    label, input {
+        margin-top: 13px;
+    }
+</style>
