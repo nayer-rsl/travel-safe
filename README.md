@@ -7,3 +7,7 @@ This web-application features the use of Code-First Migrations to create our dat
 * Tools > Nuget Package Manager > Package Manage Console > Update-Database
 
 ## Video showcasing the web-app ##
+
+
+https://user-images.githubusercontent.com/90394300/165819462-c79156cc-622d-41b8-86b9-0aea52e1c356.mp4
+
